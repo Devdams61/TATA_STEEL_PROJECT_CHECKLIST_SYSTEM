@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Analysis</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container">
+        </div>
+        <h1>Analysis</h1>
+        <div class="chart-container">
+            <img src="data:image/png;base64,{{ img_base64 }}" alt="Analysis Chart">
+        </div>
+        <a href="{{ url_for('index') }}" class="btn btn-primary">Back to Home</a>
+    </div>
+</body>
+</html>

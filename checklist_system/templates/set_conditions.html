@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+    <title>Set Conditions</title>
+</head>
+<body>
+<div class="container add-motor-container">
+    <h1 class="mt-5">Set Conditions</h1>
+    <form method="post">
+        <div class="form-group">
+            <label for="current_threshold">Current Threshold</label>
+            <input type="number" class="form-control" id="current_threshold" name="current_threshold" step="0.01" value="{{ conditions.current_threshold }}" required>
+        </div>
+        <div class="form-group">
+            <label for="temperature_threshold">Temperature Threshold</label>
+            <input type="number" class="form-control" id="temperature_threshold" name="temperature_threshold" step="0.01" value="{{ conditions.temperature_threshold }}" required>
+        </div>
+        <div class="form-group">
+            <label for="vibration_threshold">Vibration Threshold</label>
+            <input type="number" class="form-control" id="vibration_threshold" name="vibration_threshold" step="0.01" value="{{ conditions.vibration_threshold }}" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Set Conditions</button>
+    </form>
+</div>
+</body>
+</html>
+
+
+<!-- <!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+    <title>Set Conditions</title>
+</head>
+<body>
+<div class="container">
+    <h1 class="mt-5">Set Threshold Conditions</h1>
+    <form method="POST">
+        <div class="form-group">
+            <label for="current_threshold">Current Threshold</label>
+            <input type="number" class="form-control" id="current_threshold" name="current_threshold" value="{{ conditions.current_threshold }}">
+        </div>
+        <div class="form-group">
+            <label for="temperature_threshold">Temperature Threshold</label>
+            <input type="number" class="form-control" id="temperature_threshold" name="temperature_threshold" value="{{ conditions.temperature_threshold }}">
+        </div>
+        <div class="form-group">
+            <label for="vibration_threshold">Vibration Threshold</label>
+            <input type="number" class="form-control" id="vibration_threshold" name="vibration_threshold" value="{{ conditions.vibration_threshold }}">
+        </div>
+        <button type="submit" class="btn btn-primary">Save Conditions</button>
+    </form>
+</div>
+</body>
+</html>         #sqlalchemy -->

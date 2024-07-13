@@ -1,0 +1,137 @@
+/* Base styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f0f0;
+    color: #343a40;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+}
+
+/* Header styles */
+h1 {
+    color: #0b0e10;
+    margin-bottom: 30px;
+}
+
+/* Logo styles */
+.logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 200px;
+    height: auto;
+}
+
+/* Form styles */
+form {
+    margin-bottom: 30px;
+}
+
+form .form-group label {
+    font-weight: bold;
+    text-align: left;
+    width: 100%;
+    display: inline-block;
+}
+
+form .form-group input {
+    text-align: left;
+}
+
+form .btn-primary {
+    background-color: #0080C7;
+    border-color: #0080C7;
+    animation: moveUp 0.5s ease;
+}
+
+form .btn-primary:hover {
+    background-color: #006bb3;
+    border-color: #006bb3;
+}
+
+@keyframes moveUp {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Table styles */
+.table-wrapper {
+    max-height: 500px; /* Adjust this value as needed */
+    overflow-y: auto;
+    margin-top: 20px;
+}
+
+.table {
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.table th,
+.table td {
+    vertical-align: middle;
+    text-align: center;
+}
+
+.table thead th {
+    background-color: #0080C7;
+    color: #ffffff;
+    border-top: none;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Not okay condition */
+.not-okay {
+    background-color: #f8d7da !important;
+    color: #721c24 !important;
+}
+
+/* Utility classes */
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+}
+
+/* Styles for the form on add_motor page */
+.add-motor-container {
+    text-align: left;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+}

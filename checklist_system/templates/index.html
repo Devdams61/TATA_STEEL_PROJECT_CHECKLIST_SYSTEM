@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+    <title>Motor Checklist</title>
+</head>
+<body>
+<div class="container">
+    <div class="logo-container">
+        <img src="{{ url_for('static', filename='tata_Steel_logo.svg') }}" alt="Logo" class="logo"> 
+    </div>
+    <script src="https://kit.fontawesome.com/ec8651257e.js" crossorigin="anonymous"></script>
+    <h1 class="mt-5">Motor Checklist <i class="fa-solid fa-clipboard-list"></i></h1>
+    <a href="/add_motor" class="btn btn-primary mb-3">Add Motor</a>
+    <a href="/set_conditions" class="btn btn-secondary mb-3">Set Conditions</a>
+    <a href="/analysis" class="btn btn-info mb-3">Analysis</a>
+    <div class="table-wrapper">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Current</th>
+                    <th scope="col">Current Status</th>
+                    <th scope="col">Temperature</th>
+                    <th scope="col">Temperature Status</th>
+                    <th scope="col">Vibration</th>
+                    <th scope="col">Vibration Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for motor in motors %}
+                <tr>
+                    <th scope="row">{{ motor.id }}</th>
+                    <td>{{ motor.name }}</td>
+                    <td>{{ motor.current }}</td>
+                    <td class="{{ 'not-okay' if motor.current_status == 'NOT OK' else '' }}">{{ motor.current_status }}</td>
+                    <td>{{ motor.temperature }}</td>
+                    <td class="{{ 'not-okay' if motor.temperature_status == 'NOT OK' else '' }}">{{ motor.temperature_status }}</td>
+                    <td>{{ motor.vibration }}</td>
+                    <td class="{{ 'not-okay' if motor.vibration_status == 'NOT OK' else '' }}">{{ motor.vibration_status }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
+
+
+
+<!-- <!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+    <title>Motor Checklist</title>
+</head>
+<body>
+<div class="container">
+    <img src="{{ url_for('static', filename='tata_Steel_logo.svg') }}" alt="Logo" class="logo"> 
+    <script src="https://kit.fontawesome.com/ec8651257e.js" crossorigin="anonymous"></script>
+    <h1 class="mt-5">Motor Checklist <i class="fa-solid fa-clipboard-list"></i></h1>
+    <a href="/add_motor" class="btn btn-primary mb-3">Add Motor</a>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Current</th>
+                <th scope="col">Current Status</th>
+                <th scope="col">Temperature</th>
+                <th scope="col">Temperature Status</th>
+                <th scope="col">Vibration</th>
+                <th scope="col">Vibration Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for motor in motors %}
+            <tr>
+                <th scope="row">{{ motor.id }}</th>
+                <td>{{ motor.name }}</td>
+                <td>{{ motor.current }}</td>
+                <td class="{{ 'not-okay' if motor.current_status == 'NOT OK' else '' }}">{{ motor.current_status }}</td>
+                <td>{{ motor.temperature }}</td>
+                <td class="{{ 'not-okay' if motor.temperature_status == 'NOT OK' else '' }}">{{ motor.temperature_status }}</td>
+                <td>{{ motor.vibration }}</td>
+                <td class="{{ 'not-okay' if motor.vibration_status == 'NOT OK' else '' }}">{{ motor.vibration_status }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+</body>
+</html>                      #sqlalchemy -->
